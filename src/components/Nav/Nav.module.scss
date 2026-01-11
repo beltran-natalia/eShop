@@ -1,0 +1,28 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2em;
+
+  a:first-of-type {
+    flex-grow: 1;
+    text-align: left;
+
+    display: flex;
+    align-items: center;
+
+    img {
+      max-height: 5em;
+    }
+  }
+
+  a {
+    font-size: 1em;
+    &:visited {
+      color: salmon;
+    }
+    &:hover {
+      color: yellowgreen;
+    }
+  }
+}
