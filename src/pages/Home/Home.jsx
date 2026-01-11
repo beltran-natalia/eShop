@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./Home.module.scss";
 import Carousel from "../../components/Carousel/Carousel";
+import ProductGrid from "../../components/ProductGrid/ProductGrid";
+import productList from "../../components/ProductGrid/ProductList";
 
 export const Home = () => {
   return (
@@ -10,12 +12,13 @@ export const Home = () => {
         <a href="#">My Account</a>
         <a href="#">Cart</a>
       </nav>
-      <Carousel />
+
       <section className={styles.toy_carousel}>
-        <div></div>
+        <Carousel />
       </section>
+
       <section className={styles.toy_grid}>
-        <div></div>
+        <ProductGrid productList={productList} />
       </section>
     </div>
   );
