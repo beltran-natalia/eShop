@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./ProductCard.module.scss";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   /*
@@ -11,15 +12,18 @@ const ProductCard = ({ product }) => {
     pricePerUnit: 16.49,
     favourited: false,
   */
+
   return (
-    <div className={styles.product__card}>
-      <div className={styles.product__info}>
-        <img src={product.image} alt={"about the toy"} />
-        <p>{product.name}</p>
-        <p>Colours {product.colours}</p>
-        <p>{product.pricePerUnit}</p>
+    <Link to={`/products/${product.id}`}>
+      <div className={styles.product__card}>
+        <div className={styles.product__info}>
+          <img src={product.image} alt={"about the toy"} />
+          <p>{product.name}</p>
+          <p>Colours {product.colours}</p>
+          <p>{product.pricePerUnit}</p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

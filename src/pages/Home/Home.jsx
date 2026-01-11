@@ -7,12 +7,6 @@ import productList from "../../components/ProductGrid/ProductList";
 export const Home = () => {
   return (
     <div>
-      <nav>
-        <img src="#" alt="" />
-        <a href="#">My Account</a>
-        <a href="#">Cart</a>
-      </nav>
-
       <section className={styles.toy_carousel}>
         <Carousel />
       </section>
