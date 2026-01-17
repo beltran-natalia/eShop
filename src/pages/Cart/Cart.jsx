@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Cart.module.scss";
 import { Link } from "react-router-dom";
+import { showToast } from "../../services/toast";
 
 export const Cart = ({ cart, setCart }) => {
   const cartProductIds = Object.keys(cart); // ["hammer-red", "table-blue"]
@@ -23,6 +24,7 @@ export const Cart = ({ cart, setCart }) => {
       const newCart = { ...cart }; // create a copy of the current cart
       delete newCart[key]; // delete the property for this item
       setCart(newCart); // updates the cart state, to force a re-render
+      showToast(`Removed ${item.variant} ${item.name} from your shopping cart`);
     };
 
     return (

@@ -8,13 +8,14 @@ import { Routes, Route } from "react-router-dom";
 import { Nav } from "./components/Nav/Nav";
 import { Footer } from "./components/Footer/Footer";
 import { useState } from "react";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   const [cart, setCart] = useState({});
 
   return (
     <>
-      <Nav />
+      <Nav cart={cart} />
       <Routes>
         <Route index element={<Home />} />
         <Route path="cart" element={<Cart cart={cart} setCart={setCart} />} />
@@ -26,6 +27,7 @@ function App() {
         </Route>
       </Routes>
       <Footer />
+      <ToastContainer />
     </>
   );
 }

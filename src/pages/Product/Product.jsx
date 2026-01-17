@@ -5,6 +5,7 @@ import { getToyById } from "../../services/database";
 import { Link } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import styles from "./Product.module.scss";
+import { showToast } from "../../services/toast";
 
 export const Product = ({ cart, setCart }) => {
   let { productId } = useParams();
@@ -28,6 +29,7 @@ export const Product = ({ cart, setCart }) => {
 
   const onSubmit = (values) => {
     setCart({
+      ...cart,
       [`${toyDetails.name}-${values.colour}`]: {
         name: toyDetails.name,
         price: toyDetails.pricePerUnit,
@@ -35,9 +37,11 @@ export const Product = ({ cart, setCart }) => {
         variant: values.colour,
         stock: toyDetails.stock,
       },
-
-      ...cart,
     });
+
+    showToast(
+      `Added ${values.quantity} ${values.colour} ${toyDetails.name} to your shopping cart.`
+    );
   };
 
   return (
