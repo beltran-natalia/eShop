@@ -15,12 +15,17 @@ const ProductCard = ({ product }) => {
 
   return (
     <Link to={`/products/${product.id}`}>
-      <div className={styles.product__card}>
+      <div
+        className={styles.product__card}
+        style={{
+          backgroundImage: `url(${product.image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className={styles.product__info}>
-          <img src={product.image} alt={"about the toy"} />
           <p>{product.name}</p>
-          <p>Colours {product.colours}</p>
-          <p>{product.pricePerUnit}</p>
+          <p>${product.pricePerUnit}</p>
         </div>
       </div>
     </Link>

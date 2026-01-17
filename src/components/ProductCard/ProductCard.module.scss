@@ -1,15 +1,19 @@
 .product__card {
   text-align: center;
   background-color: white;
-  width: 100%;
-  max-width: 300px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.26);
-  margin: 1em;
-  padding: 1em;
-  .product__info {
-  }
 
-  img {
-    max-width: 100%;
+  width: 300px;
+  height: 400px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.26);
+  border: 1em solid white;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+
+  .product__info {
+    background-color: white;
+    width: 100%;
   }
 }

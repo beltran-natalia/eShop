@@ -11,11 +11,10 @@ export const Product = ({ cart, setCart }) => {
   let { productId } = useParams();
 
   const [toyDetails, setToyDetails] = useState({});
-  const [fetchStatus, setFetchStatus] = useState("PENDING");
+  const [fetchStatus, setFetchStatus] = useState("LOADING");
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setFetchStatus("LOADING");
     getToyById(productId)
       .then((data) => {
         setFetchStatus("SUCCESS");
