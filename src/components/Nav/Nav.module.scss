@@ -12,12 +12,13 @@ nav {
     align-items: center;
 
     img {
-      max-height: 5em;
+      max-height: 8em;
+      max-width: 8em;
     }
   }
 
   a {
-    font-size: 1em;
+    font-size: 1.3em;
     &:visited {
       color: salmon;
     }

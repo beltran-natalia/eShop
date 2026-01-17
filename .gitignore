@@ -25,3 +25,4 @@ dist-ssr
 
 # Supporting files
 project-instructions.md
+.env
