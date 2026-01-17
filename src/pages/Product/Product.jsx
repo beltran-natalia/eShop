@@ -3,9 +3,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { getToyById } from "../../services/database";
 import { Link } from "react-router-dom";
+import { Formik, Form, Field } from "formik";
 import styles from "./Product.module.scss";
 
-export const Product = () => {
+export const Product = ({ cart, setCart }) => {
   let { productId } = useParams();
 
   const [toyDetails, setToyDetails] = useState({});
@@ -25,16 +26,66 @@ export const Product = () => {
       });
   }, []);
 
+  const onSubmit = (values) => {
+    setCart({
+      [`${toyDetails.name}-${values.colour}`]: {
+        name: toyDetails.name,
+        price: toyDetails.pricePerUnit,
+        quantity: values.quantity,
+        variant: values.colour,
+        stock: toyDetails.stock,
+      },
+
+      ...cart,
+    });
+  };
+
   return (
     <>
       {fetchStatus === "LOADING" && <p>"Loading..."</p>}
       {fetchStatus === "SUCCESS" && (
         <>
-          <img src={toyDetails.image} alt={toyDetails.name} />
-          <p>{toyDetails.name}</p>
-          <p>Colours {toyDetails.colours}</p>
-          <p>${toyDetails.pricePerUnit}</p>
-          <small>Product code: {productId}</small>
+          <h2>{toyDetails.name}</h2>
+          <div className={styles.main_container}>
+            <div className={styles.image_container}>
+              <img src={toyDetails.image} alt={toyDetails.name} />
+            </div>
+            <div className={styles.details_container}>
+              <p>Price ${toyDetails.pricePerUnit}</p>
+              <p>Available in stock: {toyDetails.stock}</p>
+              <small>Product code: {productId}</small>
+
+              <fieldset>
+                <Formik
+                  initialValues={{ quantity: 1, colour: toyDetails.colours[0] }}
+                  onSubmit={onSubmit}
+                >
+                  <Form>
+                    <label htmlFor="quantity">Quantity</label>
+                    <Field
+                      id="quantity"
+                      name="quantity"
+                      type="number"
+                      min={1}
+                      max={toyDetails.stock}
+                    />
+
+                    <div id="colour">Colour</div>
+                    <div role="group" aria-labelledby="colour">
+                      {toyDetails.colours.map((option) => (
+                        <label key={option}>
+                          <Field type="radio" name="colour" value={option} />
+                          {option}
+                        </label>
+                      ))}
+                    </div>
+
+                    <button type="submit">Add to Cart</button>
+                  </Form>
+                </Formik>
+              </fieldset>
+            </div>
+          </div>
         </>
       )}
       {fetchStatus === "FAILURE" && (

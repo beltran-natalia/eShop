@@ -7,16 +7,22 @@ import "slick-carousel/slick/slick-theme.css";
 import { Routes, Route } from "react-router-dom";
 import { Nav } from "./components/Nav/Nav";
 import { Footer } from "./components/Footer/Footer";
+import { useState } from "react";
 
 function App() {
+  const [cart, setCart] = useState({});
+
   return (
     <>
       <Nav />
       <Routes>
         <Route index element={<Home />} />
-        <Route path="cart" element={<Cart />} />
+        <Route path="cart" element={<Cart cart={cart} setCart={setCart} />} />
         <Route path="products">
-          <Route path=":productId" element={<Product />} />
+          <Route
+            path=":productId"
+            element={<Product cart={cart} setCart={setCart} />}
+          />
         </Route>
       </Routes>
       <Footer />
