@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import styles from "./Product.module.scss";
 import { showToast } from "../../services/toast";
+import { Spinner } from "../../components/Spinner/Spinner";
 
 export const Product = ({ cart, setCart }) => {
   let { productId } = useParams();
 
   const [toyDetails, setToyDetails] = useState({});
   const [fetchStatus, setFetchStatus] = useState("LOADING");
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     getToyById(productId)
@@ -21,7 +21,6 @@ export const Product = ({ cart, setCart }) => {
         setToyDetails(data);
       })
       .catch((e) => {
-        setError(e);
         setFetchStatus("FAILURE");
       });
   }, []);
@@ -45,19 +44,18 @@ export const Product = ({ cart, setCart }) => {
 
   return (
     <>
-      {fetchStatus === "LOADING" && <p>"Loading..."</p>}
+      {fetchStatus === "LOADING" && <Spinner />}
       {fetchStatus === "SUCCESS" && (
         <>
-          <h2>{toyDetails.name}</h2>
           <div className={styles.main_container}>
             <div className={styles.image_container}>
               <img src={toyDetails.image} alt={toyDetails.name} />
             </div>
             <div className={styles.details_container}>
-              <p>Price ${toyDetails.pricePerUnit}</p>
+              <h2>{toyDetails.name}</h2>
+              <p>${toyDetails.pricePerUnit}</p>
               <p>Available in stock: {toyDetails.stock}</p>
               <small>Product code: {productId}</small>
-
               <fieldset>
                 <Formik
                   initialValues={{ quantity: 1, colour: toyDetails.colours[0] }}
@@ -71,6 +69,7 @@ export const Product = ({ cart, setCart }) => {
                       type="number"
                       min={1}
                       max={toyDetails.stock}
+                      className={styles.quantity_input}
                     />
 
                     <div id="colour">Colour</div>
@@ -94,9 +93,6 @@ export const Product = ({ cart, setCart }) => {
       {fetchStatus === "FAILURE" && (
         <>
           <div>Sorry, we had a problem loading your product.</div>
-          <p>
-            <small>{error.message}</small>
-          </p>
           <p>
             <Link to="/">Back to products list</Link>
           </p>

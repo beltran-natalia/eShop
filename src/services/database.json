@@ -1,0 +1,92 @@
+[
+  {
+    "image": "https://images.pexels.com/photos/7335412/pexels-photo-7335412.jpeg",
+    "name": "Wooden Alphabet",
+    "pricePerUnit": 19.99,
+    "favourited": true,
+    "featured": false,
+    "stock": 100,
+    "colours": ["Aqua", "Terrain"],
+    "id": "D9QP0Q5crjJKSWBW2udb"
+  },
+  {
+    "name": "Wooden Dinosaurs Set",
+    "image": "https://images.pexels.com/photos/3663054/pexels-photo-3663054.jpeg",
+    "colours": ["Multi-Colour"],
+    "pricePerUnit": 14.99,
+    "favourited": true,
+    "stock": 50,
+    "featured": true,
+    "id": "HttGtPY332uex5RLLdtm"
+  },
+  {
+    "name": "Wooden Stacker",
+    "image": "https://images.pexels.com/photos/9271760/pexels-photo-9271760.jpeg",
+    "pricePerUnit": 9.99,
+    "featured": true,
+    "favourited": true,
+    "stock": 10,
+    "colours": ["Multi-Colour"],
+    "id": "Sf5j4bkwsvQSMsyLGMv6"
+  },
+  {
+    "image": "https://images.pexels.com/photos/6692943/pexels-photo-6692943.jpeg",
+    "name": "Toddler Puzzle",
+    "colours": ["Multi-Colour"],
+    "pricePerUnit": 7.99,
+    "stock": 3,
+    "favourited": true,
+    "featured": false,
+    "id": "ZLP9YSQXrDnLm8N0GrX5"
+  },
+  {
+    "name": "Colour Matching Game",
+    "pricePerUnit": 27.99,
+    "favourited": false,
+    "image": "https://images.pexels.com/photos/8537198/pexels-photo-8537198.jpeg",
+    "stock": 5,
+    "colours": ["Blue", "Yellow", "Green"],
+    "featured": true,
+    "id": "fJOMA9eaTXak8LNw5J27"
+  },
+  {
+    "name": "Bead Counter",
+    "favourited": true,
+    "pricePerUnit": 20.99,
+    "image": "https://images.pexels.com/photos/6692904/pexels-photo-6692904.jpeg",
+    "stock": 50,
+    "colours": ["Natural Wood", "Green", "Blue", "White"],
+    "featured": false,
+    "id": "fmiJfOCltww8O18RyjEG"
+  },
+  {
+    "image": "https://images.pexels.com/photos/31061861/pexels-photo-31061861.jpeg",
+    "name": "Wooden Blocks",
+    "colours": ["Brown"],
+    "favourited": false,
+    "featured": true,
+    "pricePerUnit": 24.99,
+    "stock": 40,
+    "id": "pOHoDUladmnO3eFuNL8m"
+  },
+  {
+    "name": "Mountain Puzzle",
+    "image": "https://images.pexels.com/photos/6219064/pexels-photo-6219064.jpeg",
+    "pricePerUnit": 11.99,
+    "favourited": true,
+    "featured": false,
+    "stock": 100,
+    "colours": ["Blue", "Brown"],
+    "id": "poMSf6JzuYgb4IiwHZvK"
+  },
+  {
+    "name": "Wooden Shape Sorter",
+    "favourited": true,
+    "pricePerUnit": 24.99,
+    "image": "https://images.pexels.com/photos/8923957/pexels-photo-8923957.jpeg",
+    "stock": 25,
+    "colours": ["Natural Wood", "Pastel Blue", "Pastel Pink"],
+    "featured": true,
+    "id": "ytS6uPVDbpLYGamDAc0G"
+  }
+]

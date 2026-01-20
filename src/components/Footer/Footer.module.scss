@@ -1,8 +1,28 @@
 footer {
-  background-color: pink;
+  background-color: #fcf7ee;
+  p,
+  h4,
+  small {
+    color: rgb(77, 77, 77);
+  }
+  h4 {
+    padding-top: 2em;
+  }
+
   min-height: 8em;
   margin-top: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  small {
+    text-align: center;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    display: block;
+  }
 }

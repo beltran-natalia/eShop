@@ -4,6 +4,7 @@ import styles from "./Carousel.module.scss";
 import { Link } from "react-router-dom";
 
 const Carousel = ({ featuredProducts }) => {
+  // Settings from https://react-slick.neostack.com
   const settings = {
     dots: true,
     infinite: true,
@@ -13,7 +14,6 @@ const Carousel = ({ featuredProducts }) => {
     autoplay: true,
     autoplaySpeed: 3000,
     arrows: false,
-    accessibility: false,
   };
 
   // one slide per featured product

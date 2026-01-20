@@ -30,20 +30,23 @@ export const Cart = ({ cart, setCart }) => {
     return (
       <tr key={key}>
         <td>{item.name}</td>
-        <td>{item.variant}</td>
-        <td>${item.price.toFixed(2)}</td>
+
+        <td className={styles.variant}>{item.variant}</td>
+        <td className={styles.price}>${item.price.toFixed(2)}</td>
         <td>
           <button onClick={minusOne} disabled={item.quantity === 1}>
-            -
-          </button>{" "}
-          {item.quantity}{" "}
-          <button onClick={plusOne} disabled={item.quantity >= item.stock}>
             +
+          </button>{" "}
+          <span className={styles.quantity}>{item.quantity} </span>
+          <button onClick={plusOne} disabled={item.quantity >= item.stock}>
+            -
           </button>
         </td>
         <td>${(item.price * item.quantity).toFixed(2)}</td>
         <td>
-          <button onClick={removeItemFromCart}>Remove</button>
+          <button onClick={removeItemFromCart} className={styles.remove_button}>
+            Remove
+          </button>
         </td>
       </tr>
     );
@@ -73,8 +76,8 @@ export const Cart = ({ cart, setCart }) => {
             <tbody>
               <tr>
                 <td>Product</td>
-                <td>Variant</td>
-                <td>Price</td>
+                <td className={styles.variant}>Variant</td>
+                <td className={styles.price}>Price</td>
                 <td>Quantity</td>
                 <td>Total</td>
                 <td></td>
@@ -87,7 +90,7 @@ export const Cart = ({ cart, setCart }) => {
               </tr>
             </tbody>
           </table>
-          <button>Pay with card</button>
+          <button className={styles.pay_button}>Pay with card</button>
         </>
       )}
     </>

@@ -4,11 +4,11 @@ import styles from "./Home.module.scss";
 import Carousel from "../../components/Carousel/Carousel";
 import ProductGrid from "../../components/ProductGrid/ProductGrid";
 import { getToys } from "../../services/database";
+import { Spinner } from "../../components/Spinner/Spinner";
 
 export const Home = () => {
   const [toys, setToys] = useState([]);
   const [fetchStatus, setFetchStatus] = useState("LOADING");
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     getToys()
@@ -17,7 +17,6 @@ export const Home = () => {
         setToys(data);
       })
       .catch((e) => {
-        setError(e);
         setFetchStatus("FAILURE");
       });
   }, []);
@@ -26,7 +25,7 @@ export const Home = () => {
 
   return (
     <div>
-      {fetchStatus === "LOADING" && <p>Loading...</p>}
+      {fetchStatus === "LOADING" && <Spinner />}
       {fetchStatus === "FAILURE" && (
         <p>Sorry, we have some issues loading the page.</p>
       )}

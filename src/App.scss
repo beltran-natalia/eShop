@@ -1,14 +1,24 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
+// Reset: remove styles from all links in the site
 a,
 a:visited,
 a:hover,
 a:active {
   color: inherit;
   text-decoration: none;
+}
+
+.main_container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main_content {
+  flex-grow: 1;
 }

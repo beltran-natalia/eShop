@@ -1,3 +1,5 @@
+@use "../../assets/styles/palette.scss";
+
 nav {
   display: flex;
   flex-direction: row;
@@ -6,8 +8,6 @@ nav {
 
   a:first-of-type {
     flex-grow: 1;
-    text-align: left;
-
     display: flex;
     align-items: center;
 
@@ -18,12 +18,13 @@ nav {
   }
 
   a {
+    margin-right: 5em;
     font-size: 1.3em;
     &:visited {
-      color: salmon;
+      color: rgb(107, 2, 107);
     }
     &:hover {
-      color: yellowgreen;
+      text-decoration: underline;
     }
   }
 }

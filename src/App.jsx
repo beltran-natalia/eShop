@@ -14,21 +14,23 @@ function App() {
   const [cart, setCart] = useState({});
 
   return (
-    <>
+    <div className="main_container">
       <Nav cart={cart} />
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="cart" element={<Cart cart={cart} setCart={setCart} />} />
-        <Route path="products">
-          <Route
-            path=":productId"
-            element={<Product cart={cart} setCart={setCart} />}
-          />
-        </Route>
-      </Routes>
+      <div className="main_content">
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="cart" element={<Cart cart={cart} setCart={setCart} />} />
+          <Route path="products">
+            <Route
+              path=":productId"
+              element={<Product cart={cart} setCart={setCart} />}
+            />
+          </Route>
+        </Routes>
+      </div>
       <Footer />
       <ToastContainer />
-    </>
+    </div>
   );
 }
 

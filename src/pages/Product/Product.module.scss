@@ -1,21 +1,74 @@
 .main_container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 3em;
+  max-width: 1100px;
+  margin: 2 rem auto;
+  padding: 1rem;
 
   .image_container {
     img {
-      max-height: 600px;
       max-width: 600px;
+      max-height: 800px;
+      border-radius: 8px;
+      object-fit: cover;
     }
   }
 
   .details_container {
-    padding: 2em;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0;
+    text-align: left;
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    p:nth-of-type(1) {
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
     fieldset {
-      padding: 1em;
+      border: none;
+      padding: 0;
+      margin-top: 1.5rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      cursor: pointer;
+    }
+    input {
+      margin: 0;
+      width: 50px;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .quantity_input {
+      width: 140px;
+      padding-left: 0.4em;
+    }
+    button {
+      margin-top: 3em;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+      background-color: rgb(107, 2, 107);
     }
   }
 }
